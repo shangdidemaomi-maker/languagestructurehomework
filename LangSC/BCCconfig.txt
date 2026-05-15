@@ -1,0 +1,182 @@
+{
+	"IsFast":"No",
+	"DelNumber":"Yes",
+	"LowFreq":1,
+	"Language":"Chinese",
+	"StopWord":"info/StopWord.txt",	
+	
+	"FileInfo":
+	{
+		"OrgDat":"Org.dat",
+		"Offset":"offset",
+		"Unit":"IdxUnit.dat",
+		"Data":"Corpus",
+		"WordList":"DatWord.dat",
+		"CatTable":"CatTable.txt",
+		"SavePath":"UserData",
+		"SentInfo":"SentInfo.dat",
+		"DocInfo":"DocInfo.txt"
+			
+    },
+	"SizeInfo":
+	{
+		"__":"对输入语料列表分割的份数ThreadNum_Count,一份语料用一个线程处理,同时启动所有线程，做单词和索引计数",
+		"__":"内存:（HashSize_IdxUnit+HashSize_WordList）*（n+1），一份数据对应一套dat，最大不超过255，注意每个数据文件Dat大小，不超过16G",
+		"__":"数据文件在建索引和在线使用时，都全部进内存，总的索引数据大小=内存大小*语料ID压缩比",  
+		"__":"默认40",  
+		"ThreadNum_Count":20,
+
+		"__":"对输入语料列表分割的份数ThreadNum_Count,一份语料用一个线程处理,同时启动ThreadNum_Offset个线程，生成语料数据dat和Offset缓存数据",
+		"__":"内存：ThreadNum_Offset份语料对应的Offset内存大小，大语料时，这个设置要小一些。小语料时，可以等于ThreadNum_Count，同时启动全部线程",
+		"__":"默认10",
+		"ThreadNum_Offset":10,
+
+		"__":"按照索引单元的统计结果，对整个Offset进行划分，其中一份offset对应的最大文件大小MaxOffsetFileSize，最多生成的文件数不超过255",
+		"MaxOffsetFileSize":"1024000000",
+
+		
+		"__":"一个索引单元对一个线程，进行单元的offset的排序，同时启动的线程个数ThreadNum_Sort",
+		"__":"同时ThreadNum_Sort个索引单元对应的offset数据进内存，同时，所有的dat数据进内存",
+		"ThreadNum_Sort":100,
+
+		"__":"一个原子查询对应一个线程，当做复合原子查询时，同时启动ThreadNum_AS个线程，做原子查询",
+		"ThreadNum_AS":50,
+
+		
+		"__":"索引单元hash的桶个数",
+		"HashSize_IdxUnit":1024000,
+
+		"__":"单词hash的桶个数",
+		"HashSize_WordList":10240000,
+
+		"__":"做复合查询时，位标记的个数",
+		"HashTagSize_Merge":10240000,
+
+		"__":"做复合型原子查询时，返回的原子查询结果的最大个数",
+		"MaxAtomSearchRetSize":1024000,
+
+		"__":"做复杂查询时，返回结果的最大个数",
+		"RetInfoMaxSize":10240000,
+
+		"__":"存放结果的缓存大小",
+		"RetBuffSize":1024000,
+
+		"__":"Offset进内存的最大数目",
+		"MaxMemCount":"6400000000",
+
+		"__":"Offset进内存的数目大于MaxMemCount时，一次性释放offset的数目",
+		"ToFreeMemCount":"1600000000",
+
+		"__":"offset排序时，同时进入内存进行offset单元排序的最大数目",
+		"MaxUnitCount_ToSort":"5000000",
+
+		"__":"进行原子查询时，最大查找的offset单元数目，当抽样式查询时使用",
+		"MaxUnitCount_ToSearch":"100000000",
+
+
+		"__":"Offset排序时，后缀串的个数",
+		"SortCompWordLen":10,
+
+		"__":"Offset排序时，后缀串的个数",
+		"MinIdxUnitCount_ForComplexIdx":0,
+		
+		"HashSize_SentInfo":"10000000",
+
+		"BM_K1":"1.2",
+		"BM_K2":"1.0",
+		"BM_B":"0.75",
+		"BM25F_B":"0.75",
+		"BM25F_WT":"100",
+		"BM25F_WA":"6",
+		"BM25F_WC":"4",
+		"BM25F_WD":"1"
+		
+    },
+
+	"Clause Seperator":
+	[
+		"。",
+		"？",
+		"！",
+		"……",
+		"；",
+		"?",
+		"!",
+		"，",
+		"：",
+		","
+	],
+
+	"SubTree Cat":
+	[
+		"PR"
+	],
+
+	"Sentence Seperator":
+	[
+		"。",
+		"？",
+		"！",
+		"……",
+		"；",
+		"?",
+		"!"
+	],
+	"Cache":
+	{
+		"POS_R":[
+		],
+		"POS_L":[
+		],
+		"HZ_R":[
+			
+		],
+		"HZ_L":[
+		],
+		"MR":[
+		],
+		"ML":[
+		]
+	},
+	"StopPOS":
+	[
+		"x",
+		"uj",
+		"eng",
+		"c",
+		"f",
+		"m",
+		"r",
+		"b",
+		"q",
+		"uv",
+		"p"
+	],
+	"DocID_Name":"PUN",
+	"Field":
+	[
+		"TI",
+		"AB",
+		"CLA",
+		"DESC"
+	],
+	"DocInfo":
+	[
+		"PUN",
+		"APN",
+		"PUD",
+		"APD",
+		"IPC"
+	],
+	"DocInfo_Type_Number":
+	[
+		"PUD",
+		"APD"
+	],
+	"DocInfo_Type_String":
+	[
+		"PUN",
+		"APN",
+		"IPC"
+	]
+}

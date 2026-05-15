@@ -1,0 +1,6 @@
+{"Type":"Table","Path":"data/"}
+{"Type":"FSA","Path":"data/"}
+{"Type":"Service","Name":"Dep","Path":"cit.blcu.edu.cn/dep"}
+{"Type":"Service","Name":"Chunk","Path":"cit.blcu.edu.cn/chunk/"}
+{"Type":"Service","Name":"Tree","Path":"https://cit.blcu.edu.cn/stree"}
+	

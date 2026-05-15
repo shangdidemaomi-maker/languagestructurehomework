@@ -1,0 +1,26 @@
+{
+    "table_name": "liheci",
+    "record_format": "jsonl",
+    "content": {
+        "word": "word",
+        "form": "form",
+        "distance": "distance",
+        "insert": "insert",
+        "example": "example"
+    },
+    "index": {
+        "kv": [
+            "word",
+            "form"
+        ],
+        "number": [
+            "distance"
+        ],
+        "bm25": [
+            "example"
+        ],
+        "affix": [
+            "insert"
+        ]
+    }
+}
